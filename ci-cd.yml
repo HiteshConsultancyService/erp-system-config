@@ -1,8 +1,7 @@
 pipeline:
-  name: springboot-maven-build
-  identifier: springboot_maven_build
-  projectIdentifier: config
-  orgIdentifier: my_org
+  name: erp_pipeline
+  identifier: erp_pipeline
+  tags: {}
   stages:
     - stage:
         name: Build
