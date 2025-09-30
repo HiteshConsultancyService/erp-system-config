@@ -2,8 +2,17 @@ pipeline:
   name: ERP_Configuration
   identifier: ERP_Configuration
   orgIdentifier: default
-  projectIdentifier: ERP_System   # check actual project identifier in URL
+  projectIdentifier: ERP_System   # check identifier in URL (must be lowercase)
   tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: ERP_Connector
+        repoName: HiteshConsultancyService/erp-system-config
+        build:
+          type: branch
+          spec:
+            branch: main
   stages:
     - stage:
         name: Build
@@ -11,19 +20,12 @@ pipeline:
         type: CI
         spec:
           cloneCodebase: true
-          codebase:
-            connectorRef: ERP_Connector
-            repoName: HiteshConsultancyService/erp-system-config
-            build:
-              type: branch
-              spec:
-                branch: main
           platform:
             os: Linux
             arch: Amd64
           runtime:
             type: Cloud
-            spec: {}       # ✅ required even if empty
+            spec: {}
           execution:
             steps:
               - step:
@@ -34,7 +36,7 @@ pipeline:
                     shell: Bash
                     command: |
                       mvn clean install -DskipTests
-        failureStrategies:         # ✅ required
+        failureStrategies:
           - onFailure:
               errors:
                 - AllErrors
