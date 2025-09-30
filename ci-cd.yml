@@ -1,0 +1,27 @@
+pipeline:
+  name: springboot-maven-build
+  identifier: springboot_maven_build
+  projectIdentifier: config
+  orgIdentifier: my_org
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Maven Build
+                  identifier: Maven_Build
+                  spec:
+                    shell: Bash
+                    command: |
+                      mvn clean install -DskipTests
