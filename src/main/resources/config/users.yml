@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/erp
+    username: root
+    password: Hitesh@123
+  oauth:
+    credentials:
+      token_endpoint: "https://oauth2.googleapis.com/token"
+      user_info_endpoint: "https://oauth2.googleapis.com/tokeninfo?id_token="
+      user_info_endpoint_v2: "https://www.googleapis.com/oauth2/v3/userinfo"
+      client_id: 921285927183-qq5h1srr39001dkgn2gjvjftj0rn6b1o.apps.googleusercontent.com
+      client_secret: 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
+      redirect_uri: "https://developers.google.com/oauthplayground"
+      grant_type: "authorization_code"
