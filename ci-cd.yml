@@ -1,6 +1,8 @@
 pipeline:
   name: erp_pipeline
   identifier: erp_pipeline
+  orgIdentifier: default
+  projectIdentifier: erp_system 
   tags: {}
   stages:
     - stage:
