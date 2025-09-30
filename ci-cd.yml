@@ -8,7 +8,7 @@ pipeline:
     ci:
       codebase:
         connectorRef: ERP_Connector
-        repoName: HiteshConsultancyService/erp-system-config
+        repoName: erp-system-config
         build:
           type: branch
           spec:
